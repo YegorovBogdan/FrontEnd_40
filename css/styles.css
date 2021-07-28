@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #ff6c00;
+  --primary-color: #ff6c00; /*Основной цвет сайта, используется для кнопок и рамочек */
   --secondary-color: #191c26;
 
   --text-primary: #303030;
@@ -9,12 +9,17 @@
 
 body {
   font-family: "Open Sans", sans-serif;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 ul {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 a {
@@ -26,10 +31,11 @@ a {
   font-weight: 600;
   font-size: 11px;
   line-height: 15px;
+  color: var(--text-primary);
 }
 
 .suptitle-secondary {
-  color: var(--text-secondary);
+  color: #9da4bd99;
 }
 
 h2.section-title {
@@ -50,23 +56,47 @@ h2.section-title.lighten {
   line-height: 30px;
 }
 
-/* Navbar styles here */
-nav.navbar {
-  outline: 2px solid skyblue;
+.header {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
+/* Navbar styles here */
+nav.navbar {
+  width: 100%;
+  outline: 2px solid skyblue;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  padding: 30px 55px 0 55px;
+  box-sizing: border-box;
+}
+
+.logo-img {
+  width: 68px;
+  height: 56px;
+  margin: 0 32px;
+}
+
+.nav-holder {
+  display: flex;
+  align-items: center;
+  height: 56px;
+}
 nav.navbar .btn-box {
-  display: inline-block;
 }
 
 .nav-links {
-  background-color: skyblue;
-  display: inline-block;
-}
-.nav-links li {
-  display: inline-block;
+  display: flex;
 }
 
+.nav-links li {
+  margin: 0 40px;
+}
 a.nav-link {
   font-weight: 600;
   font-size: 12px;
@@ -79,14 +109,36 @@ a.nav-link:hover,
   color: var(--primary-color);
 }
 
-.section-description {
+/* Main styles here */
+
+.section-box {
+  width: 100%;
+  padding: 130px 55px;
 }
 
+.about-section,
+.why-us_section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about_image-box {
+  display: flex;
+  justify-content: space-between;
+  width: 48%;
+}
+.about_image-box img {
+  width: 48%;
+}
+
+.description-container {
+  width: 48%;
+}
 p.section-description {
   font-weight: normal;
   font-size: 18px;
   line-height: 30px;
-  columns: var(--text-primary-lighten);
+  color: var(--text-primary-lighten);
 }
 
 .social-link {
@@ -103,6 +155,7 @@ p.section-description {
   letter-spacing: 0.09em;
   text-transform: uppercase;
   border: 1px solid #ff6c00;
+  display: inline-block;
   box-sizing: border-box;
   border-radius: 25px;
   padding: 12px 20px;
@@ -113,36 +166,60 @@ p.section-description {
   color: var(--text-primary);
 }
 
-/* Price style*/
+.slider {
+  width: calc(100% - 155px);
+  background-image: url(../images/barbershop/img-thirthd.jpeg);
+}
+
+.sidebar {
+  width: 155px;
+  height: 100vh;
+  background-color: #fff;
+}
+
+/* Price styles */
 
 .price-list {
-  display: inline-block;
+  display: flex;
+}
+
+.price-item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .price-item p,
 .price-item span {
-  display: inline-block;
   font-size: 18px;
   line-height: 30px;
   color: var(--text-secondary);
 }
 
 /* Why us styles here */
-
+.number-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 48%;
+  padding: 0 100px;
+}
 .number-box {
   background: #f7f7f7;
-  width: 170px;
-  height: 130px;
-  display: inline-block;
+  min-width: 170px;
+  width: 48%;
+  height: 132px;
+  margin-top: 30px;
 }
 
 .number-box p,
 .number-box span {
-  display: inline-block;
+  display: block;
   font-weight: bold;
   font-size: 42px;
   line-height: 57px;
-  color: var(--text-secondary);
+  text-align: center;
+  color: var(--text-primary);
 }
 
 .number-box span {
@@ -152,7 +229,13 @@ p.section-description {
   line-height: 15px;
 }
 
-/* Masters */
+/* Masters styles here */
+
+.masters-list {
+  display: flex;
+  justify-content: space-between;
+  flex-basis: 300px;
+}
 
 .master-card p {
   font-size: 18px;
