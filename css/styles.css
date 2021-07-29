@@ -38,6 +38,21 @@ a {
   color: #9da4bd99;
 }
 
+.suptitle-primary::before,
+.suptitle-secondary::before {
+  width: 60px;
+  height: 1px;
+  background: #9da4bd99;
+  margin-right: 20px;
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.suptitle-primary::before{
+  background; rgba(48, 48, 48, 1);
+}
+
 h2.section-title {
   font-family: "Raleway";
   font-weight: bold;
@@ -86,8 +101,6 @@ nav.navbar {
   display: flex;
   align-items: center;
   height: 56px;
-}
-nav.navbar .btn-box {
 }
 
 .nav-links {
